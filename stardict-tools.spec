@@ -1,5 +1,5 @@
 %define version 3.0.1
-%define release %mkrel 1
+%define release %mkrel 2
 
 Summary:	Some tools for StarDict
 Name:		stardict-tools
