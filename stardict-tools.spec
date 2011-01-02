@@ -13,6 +13,7 @@ BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 Source:		http://stardictproject.googlecode.com/files/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-3.0.1-fix-underlinking.patch
 Patch1:		%{name}-3.0.1-fix-gcc43.patch
+Patch2:		stardict-tools-3.0.1-fix-gcc45.patch
 BuildRequires:	libpcre-devel
 BuildRequires:	gtk+2-devel
 BuildRequires:	mysql-devel
@@ -26,15 +27,16 @@ This package contain some tools for StarDict, an international dictionary.
 %setup -q
 %patch0 -p1 -b .undlink
 %patch1 -p1 -b .gcc43
+%patch2 -p1 -b .gcc45
 
 %build
 autoreconf -f -i
-%configure
+%configure2_5x
 %make
 
 %install
 rm -rf %{buildroot}
-%makeinstall
+%makeinstall_std
 
 # finish install
 mkdir -p %{buildroot}%{_libdir}/%{name}
