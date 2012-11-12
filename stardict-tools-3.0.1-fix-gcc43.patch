@@ -1,0 +1,71 @@
+diff -p -up stardict-tools-3.0.1/src/bgl2txt.cpp.gcc43 stardict-tools-3.0.1/src/bgl2txt.cpp
+--- stardict-tools-3.0.1/src/bgl2txt.cpp.gcc43	2007-08-01 05:00:02.000000000 +0200
++++ stardict-tools-3.0.1/src/bgl2txt.cpp	2009-05-30 21:33:42.000000000 +0200
+@@ -1,3 +1,5 @@
++#include <cstring>
++#include <cstdio>
+ #include "libbgl2txt.h"
+ 
+ int main(int argc, char * argv[])
+diff -p -up stardict-tools-3.0.1/src/bgl_babylon.cpp.gcc43 stardict-tools-3.0.1/src/bgl_babylon.cpp
+--- stardict-tools-3.0.1/src/bgl_babylon.cpp.gcc43	2007-08-16 07:14:35.000000000 +0200
++++ stardict-tools-3.0.1/src/bgl_babylon.cpp	2009-05-30 21:33:42.000000000 +0200
+@@ -18,6 +18,7 @@
+  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.          *
+  ***************************************************************************/
+ 
++#include <cstring>
+ #include "bgl_babylon.h"
+ 
+ #include<stdlib.h>
+diff -p -up stardict-tools-3.0.1/src/bgl_stardictbuilder.cpp.gcc43 stardict-tools-3.0.1/src/bgl_stardictbuilder.cpp
+--- stardict-tools-3.0.1/src/bgl_stardictbuilder.cpp.gcc43	2007-09-05 05:48:06.000000000 +0200
++++ stardict-tools-3.0.1/src/bgl_stardictbuilder.cpp	2009-05-30 21:33:42.000000000 +0200
+@@ -18,6 +18,7 @@
+  *   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.          *
+  ***************************************************************************/
+ 
++#include <cstring>
+ #include "bgl_stardictbuilder.h"
+ 
+ #include <iostream>
+diff -p -up stardict-tools-3.0.1/src/dictbuilder.cpp.gcc43 stardict-tools-3.0.1/src/dictbuilder.cpp
+--- stardict-tools-3.0.1/src/dictbuilder.cpp.gcc43	2007-07-10 09:16:06.000000000 +0200
++++ stardict-tools-3.0.1/src/dictbuilder.cpp	2009-05-30 21:33:42.000000000 +0200
+@@ -1,3 +1,4 @@
++#include <cstring>
+ #include <algorithm>
+ #include <fstream>
+ #include <iostream>
+diff -p -up stardict-tools-3.0.1/src/libbgl2txt.cpp.gcc43 stardict-tools-3.0.1/src/libbgl2txt.cpp
+--- stardict-tools-3.0.1/src/libbgl2txt.cpp.gcc43	2007-08-01 05:01:10.000000000 +0200
++++ stardict-tools-3.0.1/src/libbgl2txt.cpp	2009-05-30 21:33:42.000000000 +0200
+@@ -1,3 +1,4 @@
++#include <cstring>
+ #include "libbgl2txt.h"
+ #include "bgl_babylonreader.h"
+ #include "bgl_stardictbuilder.h"
+diff -p -up stardict-tools-3.0.1/src/tabfile2sql.cpp.gcc43 stardict-tools-3.0.1/src/tabfile2sql.cpp
+--- stardict-tools-3.0.1/src/tabfile2sql.cpp.gcc43	2007-08-15 07:56:06.000000000 +0200
++++ stardict-tools-3.0.1/src/tabfile2sql.cpp	2009-05-30 21:33:42.000000000 +0200
+@@ -1,3 +1,4 @@
++#include <cstring>
+ #include <stdlib.h>
+ #include <stdio.h>
+ #include <sys/types.h>
+diff -p -up stardict-tools-3.0.1/src/wordnet.cpp.gcc43 stardict-tools-3.0.1/src/wordnet.cpp
+--- stardict-tools-3.0.1/src/wordnet.cpp.gcc43	2009-05-30 21:35:37.000000000 +0200
++++ stardict-tools-3.0.1/src/wordnet.cpp	2009-05-30 21:35:59.000000000 +0200
+@@ -1,3 +1,4 @@
++#include <cstring>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <glib.h>
+diff -p -up stardict-tools-3.0.1/src/wubi.cpp.gcc43 stardict-tools-3.0.1/src/wubi.cpp
+--- stardict-tools-3.0.1/src/wubi.cpp.gcc43	2007-07-10 09:16:06.000000000 +0200
++++ stardict-tools-3.0.1/src/wubi.cpp	2009-05-30 21:33:42.000000000 +0200
+@@ -1,3 +1,4 @@
++#include <cstring>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <sys/types.h>

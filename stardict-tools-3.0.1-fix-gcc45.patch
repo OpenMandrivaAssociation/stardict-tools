@@ -1,0 +1,52 @@
+Author: Michal Čihař <nijel@debian.org>
+Subject: Fixed compilation by not mixing char and const char
+Forwarded: https://sourceforge.net/tracker/?func=detail&aid=2926227&group_id=80679&atid=560634
+--- a/src/KangXi.cpp
++++ b/src/KangXi.cpp
+@@ -57,7 +57,7 @@
+ 	gchar utf8[7];
+ 	gint n = g_unichar_to_utf8(uc, utf8);
+ 	utf8[n] = '\0';
+-	char *p;
++	const char *p;
+ 	p = strchr(line, '\t');
+ 	if (!p) {
+ 		g_print("Error: %s\n", line);
+--- a/src/Unihan.cpp
++++ b/src/Unihan.cpp
+@@ -46,7 +46,7 @@
+ 
+ std::map<std::string, std::list<std::pair<std::string, std::string> > > unihan_map;
+ 
+-void parse_line(const char *line)
++void parse_line(char *line)
+ {
+ 	if (line[0] == '#')
+ 		return;
+@@ -55,7 +55,7 @@
+ 		g_print("Error: %s\n", line);
+ 		return;
+ 	}
+-	const char *han = line+2;
++	char *han = line+2;
+ 
+ 	char *p;
+ 	p = strchr(han, '\t');
+@@ -65,7 +65,7 @@
+ 	}
+ 	*p = '\0';
+ 	p++;
+-	const char *key = p;
++	char *key = p;
+ 
+ 	p = strchr(key, '\t');
+ 	if (!p) {
+@@ -74,7 +74,7 @@
+ 	}
+ 	*p = '\0';
+ 	p++;
+-	const char *def = p;
++	char *def = p;
+ 
+ 	std::map<std::string, std::list<std::pair<std::string, std::string> > >::iterator iter = unihan_map.find(han);
+ 	if (iter == unihan_map.end()) {
