@@ -1,14 +1,10 @@
-%define version 3.0.1
-%define release %mkrel 7
-
 Summary:	Some tools for StarDict
 Name:		stardict-tools
-Version:	%{version}
-Release:	%{release}
+Version:	3.0.1
+Release:	7
 License:	GPLv2+
 Group:		Text tools
 URL:		http://stardict.sourceforge.net/
-BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 Source:		http://stardictproject.googlecode.com/files/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-3.0.1-fix-underlinking.patch
@@ -30,12 +26,12 @@ This package contain some tools for StarDict, an international dictionary.
 %patch2 -p1 -b .gcc45
 
 %build
+export LDFLAGS="-lz"
 autoreconf -f -i
 %configure2_5x
 %make
 
 %install
-rm -rf %{buildroot}
 %makeinstall_std
 
 # finish install
@@ -62,9 +58,6 @@ StartupNotify=true
 Categories=Utility;Dictionary;Office;GTK;
 EOF
 
-%clean
-rm -rf %{buildroot}
-
 %files
 %defattr(-,root,root)
 %doc AUTHORS COPYING ChangeLog INSTALL
@@ -72,4 +65,24 @@ rm -rf %{buildroot}
 %{_bindir}/*
 %{_libdir}/%{name}
 %{_datadir}/applications/*.desktop
+
+
+
+%changelog
+* Thu Mar 17 2011 Oden Eriksson <oeriksson@mandriva.com> 3.0.1-6mdv2011.0
++ Revision: 645898
+- relink against libmysqlclient.so.18
+
+* Sun Jan 02 2011 Funda Wang <fwang@mandriva.org> 3.0.1-5mdv2011.0
++ Revision: 627486
+- fix build with gcc 4.5
+
+  + Oden Eriksson <oeriksson@mandriva.com>
+    - rebuilt against mysql-5.5.8 libs, again
+    - rebuilt against mysql-5.5.8 libs
+
+* Mon Jun 01 2009 Jérôme Brenier <incubusss@mandriva.org> 3.0.1-2mdv2010.0
++ Revision: 382012
+- import stardict-tools
+
 
