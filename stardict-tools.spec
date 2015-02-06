@@ -1,7 +1,7 @@
 Summary:	Some tools for StarDict
 Name:		stardict-tools
 Version:	3.0.1
-Release:	7
+Release:	8
 License:	GPLv2+
 Group:		Text tools
 URL:		http://stardict.sourceforge.net/
