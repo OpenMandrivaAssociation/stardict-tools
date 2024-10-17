@@ -4,7 +4,7 @@ Version:	3.0.1
 Release:	8
 License:	GPLv2+
 Group:		Text tools
-URL:		http://stardict.sourceforge.net/
+URL:		https://stardict.sourceforge.net/
 
 Source:		http://stardictproject.googlecode.com/files/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-3.0.1-fix-underlinking.patch
