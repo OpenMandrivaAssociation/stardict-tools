@@ -10,6 +10,11 @@ Source:		http://stardictproject.googlecode.com/files/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-3.0.1-fix-underlinking.patch
 Patch1:		%{name}-3.0.1-fix-gcc43.patch
 Patch2:		stardict-tools-3.0.1-fix-gcc45.patch
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	libpcre-devel
 BuildRequires:	gtk+2-devel
 BuildRequires:	mysql-devel
